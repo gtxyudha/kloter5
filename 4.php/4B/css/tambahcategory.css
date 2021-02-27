@@ -1,0 +1,25 @@
+.formtambah{
+    width: 350px;
+    background: white;
+    padding: 30px 20px;
+}
+
+.btnsimpan{
+    background: #4695de;
+    color: white;
+    font-size: 11 pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.btnbatal{
+    background: #de4646;
+    color: white;
+    font-size: 11 pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+}

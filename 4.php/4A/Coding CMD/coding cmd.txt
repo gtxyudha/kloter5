@@ -1,0 +1,78 @@
+create database kloter5;
+
+use kloter5;
+
+create table categories(
+id int(10) auto_increment,
+name varchar (30),
+primary key(id)
+);
+
+
+create table books(
+id int(10) auto_increment,
+name varchar(50),
+stok int (10),
+image varchar (255),
+deskripsi varchar(255),
+category_id int (10),
+primary key(id),
+foreign key(category_id) references categories(id)
+);
+
+
+insert into categories (name) values("Novel");
+insert into categories (name) values("Jurnal");
+insert into categories (name) values("Ensiklopedi");
+insert into categories (name) values("Komik");
+insert into categories (name) values("Dongeng");
+insert into categories (name) values("Biografi");
+insert into categories (name) values("Karya ilmiah");
+
+
+insert into books(name, stok, image, deskripsi, category_id) values
+("5 CM", "10", "5cm.PNG", "5 cm adalah novel karya Donny Dhirgantoro pada tahun 2005 yang diterbitkan oleh Grasindo", 1);
+
+
+
+insert into books(name, stok, image, deskripsi, category_id) values
+("Anak Rantau", "0", "Anak Rantau.PNG", "Novel Anak Rantau ditulis oleh Ahmad Fuadi, berkisah tentang Hepi dan petualangannya", 1);
+
+
+insert into books(name, stok, image, deskripsi, category_id) values
+("Dalang Pelo", "5", "Dalang Pelo.PNG", "ada sosok Nur Alif Ramadhan atau akrab disapa Acil sebagai kreator yang serba sendiri", 4);
+
+
+insert into books(name, stok, image, deskripsi, category_id) values
+("Dilan 1990", "10", "Dilan 1990.PNG", "menceritakan tentang kisah cinta seorang murid baru yang pindah ke Bandung, dia bernama Milea", 1);
+
+insert into books(name, stok, image, deskripsi, category_id) values
+("Garis Waktu", "0", "Garis Waktu.PNG", "Pada sebuah garis waktu yang merangkak maju, akan ada saatnya kau bertemu dengan satu orang yang mengubah hidupmu untuk selamanya", 1);
+
+
+insert into books(name, stok, image, deskripsi, category_id) values
+("Harry Potter", "20", "Harry Potter.PNG", "menceritakan seorang anak laki-laki yang ditakdirkan untuk menghancurkan kekuatan jahat bernama Voldemort", 1);
+
+insert into books(name, stok, image, deskripsi, category_id) values
+("Konspirasi Alam Semesta", "3", "Konspirasi Alam Semest.PNG", "Sebuah novel karya Fiersa Besari, memiliki akhir cerita yang cukup mengejutkan", 1);
+
+insert into books(name, stok, image, deskripsi, category_id) values
+("Si Juki", "11", "Si Juki.PNG", "Komik ciptaan Faza Meonk", 4);
+
+
+update books set deskripsi="akan ada saatnya kau bertemu dengan satu orang yang mengubah hidupmu untuk selamanya" where id=5;
+
+insert into books(name, stok, image, deskripsi, category_id) values
+("Laskar Pelangi", "3", "Laskar Pelangi.PNG", "kehidupan 10 anak dari keluarga miskin yang bersekolah di Belitung yang penuh keterbatasan", 1);
+
+select * from books;
+
+SELECT categories.name as 'nama kategori', books.name as 'nama buku', books.stok FROM categories INNER JOIN books ON categories.id = books.category_id where categories.id=4;
+
+SELECT categories.name as 'nama kategori', books.name as 'nama buku', books.stok FROM categories INNER JOIN books ON categories.id = books.category_id where categories.id=1;
+
+
+SELECT * FROM books INNER JOIN categories ON categories.id = books.category_id where books.id=4;
+
+
+
