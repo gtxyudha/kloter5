@@ -7,7 +7,8 @@ public class Palindrome{
      int r,sum=0,temp; 
 
      System.out.print("Masukkan Bilangan: ");
-     int angka=input.nextInt();   
+     int angka=input.nextInt(); 
+     int cetak=angka;  
      
   
     temp=angka;    
@@ -17,8 +18,8 @@ public class Palindrome{
         angka=angka/10;    
     }    
     if(temp==sum)    
-    System.out.println(angka + " merupakan bilangan palindrome");    
+    System.out.println(cetak + " merupakan bilangan palindrome");    
     else    
-    System.out.println(angka + " tidak merupakan bilangan palindrome");    
+    System.out.println(cetak + " tidak merupakan bilangan palindrome");    
     }  
 }
